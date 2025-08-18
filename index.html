@@ -26,7 +26,75 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+<style>
+  body {
+    font-family: sans-serif;
+    padding: 20px;
+    background: #111; /* dark background */
+    color: #ffffff; /* text color white for headings */
+  }
+   body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: repeating-linear-gradient(
+      45deg,
+      rgba(255,255,255,0.02),
+      rgba(255,255,255,0.02) 1px,
+      transparent 1px,
+      transparent 10px
+    );
+    z-index: -1;
+  }
 
+  .h2-topic {
+    text-align: center;
+    margin: 30px 0 10px 0;
+    color: #fff;
+  }
+
+  .carousel-row {
+    overflow: hidden;
+    margin: 20px 0;
+  }
+
+  .carousel-track {
+    display: flex;
+    width: max-content;
+  }
+
+  /* Duplicate images in track for seamless loop */
+  .carousel-track img {
+    width: 200px;
+    height: 150px;
+    margin-right: 20px;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+
+  /* Row animations */
+  .row1 .carousel-track {
+    animation: scroll-right 20s linear infinite;
+  }
+
+  .row2 .carousel-track {
+    animation: scroll-left 20s linear infinite;
+  }
+
+  .row3 .carousel-track {
+    animation: scroll-right 20s linear infinite;
+  }
+
+  @keyframes scroll-right {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  @keyframes scroll-left {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(50%); }
+  }
+</style>
   
 </head>
 
@@ -34,44 +102,6 @@
 
   <header id="header" class="header dark-background d-flex flex-column">
     <i class="header-toggle d-xl-none bi bi-list"></i>
-
-    <div class="profile-img">
-      <img src="assets/img/hero-bg.jpg" alt="" class="img-fluid rounded-circle">
-    </div>
-
-    <a href="index.html" class="logo d-flex align-items-center justify-content-center">
-      <!-- Uncomment the line below if you also wish to use an image logo -->
-      <!-- <img src="img/logo.png" alt=""> -->
-      <h1 class="sitename">Keshan Panditharathna</h1>
-    </a>
-
-    <div class="social-links text-center">
-      <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
-      <a href="www.facebook.com" class="facebook"><i class="bi bi-facebook"></i></a>
-      <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-      <a href="#" class="google-plus"><i class="bi bi-skype"></i></a>
-      <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-    </div>
-
-    <nav id="navmenu" class="navmenu">
-      <ul>
-        <li><a href="index.html" class="active"><i class="bi bi-house navicon"></i>Home</a></li>
-        <li><a href="#about"><i class="bi bi-person navicon"></i> About</a></li>
-        <li><a href="Education.html"><i class="bi bi-file-earmark-text navicon"></i> Education</a></li>
-        <li><a href="portfolio-details.html"><i class="bi bi-images navicon"></i> Experience</a></li>
-        <li><a href="#services"><i class="bi bi-hdd-stack navicon"></i> Services</a></li>
-        <li class="dropdown"><a href="#"><i class="bi bi-menu-button navicon"></i> <span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-          <ul>
-            <li><a href="#">Dropdown 1</a></li>
-            <li><a href="#">Dropdown 2</a></li>
-            <li><a href="#">Dropdown 3</a></li>
-            <li><a href="#">Dropdown 4</a></li>
-          </ul>
-        </li>
-        <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
-      </ul>
-    </nav>
-
   </header>
 
   <main class="main">
@@ -94,7 +124,7 @@
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>About Me</h2>
-        <p>Hello! I’m Keshan Panditharathna, a passionate designer and freelance photographer based in Sri Lanka. Currently, I’m following Software Engineering Degree ay NSBM Green University, one of Sri Lanka’s leading University.
+        <p>Hello! I’m Keshan Panditharathna, a passionate designer and freelance Web designing based in Sri Lanka. Currently, I’m following Software Engineering Degree ay NSBM Green University, one of Sri Lanka’s leading University.
           In addition to my experience in the financial sector, I am also an avid freelancer, where I bring my design skills and artistic vision to various projects. As a photographer and videographer, I capture moments and create compelling images that tell a story and evoke emotion.
           Feel free to reach out if you’re interested in collaborating on a project or want to connect!
         </p>
@@ -104,7 +134,7 @@
 
         <div class="row gy-4 justify-content-center">
           <div class="col-lg-4">
-            <img src="assets/img/my-profile-img.jpeg" class="img-fluid" alt="">
+            <img src="assets/img/my-profile-img1.jpeg" class="img-fluid" alt="">
           </div>
           <div class="col-lg-8 content">
             <h2>Basic Information About Me.</h2>
@@ -127,7 +157,7 @@
                 </ul>
               </div>
             </div>
-            <p class="py-3">
+            <p class="py-3"> <br>
               "Below is my detailed and thoughtful summary that highlights my client base, the diverse projects I work on passionately,
                the high-quality work I have delivered with dedication, and the ongoing support I provide to help others grow, solve problems, and succeed through tailored solutions and personalized services."
             </p>
@@ -148,7 +178,7 @@
           <div class="col-lg-3 col-md-6">
             <div class="stats-item">
               <i class="bi bi-emoji-smile"></i>
-              <span data-purecounter-start="0" data-purecounter-end="300" data-purecounter-duration="1" class="purecounter"></span>
+              <span data-purecounter-start="0" data-purecounter-end="150" data-purecounter-duration="1" class="purecounter"></span>
               <p><strong>Happy Clients</strong> <span>Complicate Business</span></p>
             </div>
           </div><!-- End Stats Item -->
@@ -156,7 +186,7 @@
           <div class="col-lg-3 col-md-6">
             <div class="stats-item">
               <i class="bi bi-journal-richtext"></i>
-              <span data-purecounter-start="0" data-purecounter-end="120" data-purecounter-duration="1" class="purecounter"></span>
+              <span data-purecounter-start="1000" data-purecounter-end="100" data-purecounter-duration="1" class="purecounter"></span>
               <p><strong>Projects</strong> <span>completed </span></p>
             </div>
           </div><!-- End Stats Item -->
@@ -172,7 +202,7 @@
           <div class="col-lg-3 col-md-6">
             <div class="stats-item">
               <i class="bi bi-people"></i>
-              <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1" class="purecounter"></span>
+              <span data-purecounter-start="0" data-purecounter-end="50" data-purecounter-duration="1" class="purecounter"></span>
               <p><strong>Hard Works</strong> <span></span></p>
             </div>
           </div><!-- End Stats Item -->
@@ -321,146 +351,172 @@
 
     </section> <hr><!-- /Services Section -->
     
-<!--Carosel area-->
-    <h2>websites</h2>
-  <div class="carousel-container">
-    <div class="carousel-slide">
-      <img src="assets/img/web/web 1.jpg" alt="1">
-      <img src="assets/img/web/web 3.jpg" alt="3">
-      <img src="assets/img/web/web 2.jpg" alt="2">
-    </div>
-  
-    <div class="carousel-nav">
-      <button class="prev">&#10094;</button>
-      <button class="next">&#10095;</button>
-    </div>
-    <div class="carousel-dots">
-      <span class="dot active"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-    </div>
+<h2 class="h2-topic">Web Designing</h2>
+<div class="carousel-row row1">
+  <div class="carousel-track">
+    <img src="assets/img/web/web 1.jpg" alt="">
+    <img src="assets/img/web/web 2.jpg" alt="">
+    <img src="assets/img/web/web 3.jpg" alt="">
+    <img src="assets/img/web/kaju.jpg" alt="">
+    <img src="assets/img/web/7081413.jpg" alt="">
+    <!-- duplicate for seamless loop -->
+    <img src="assets/img/web/7081413.jpg" alt="">
+    <img src="https://picsum.photos/200/150?random=2" alt="">
+    <img src="https://picsum.photos/200/150?random=3" alt="">
+    <img src="https://picsum.photos/200/150?random=4" alt="">
+    <img src="assets/img/web/7081413.jpg" alt="">
+  </div>
+</div>
+
+<h2 class="h2-topic">Graphic Designing</h2>
+<div class="carousel-row row2">
+  <div class="carousel-track">
+    <img src="assets/img/design/des1.jpg" alt="">
+    <img src="assets/img/design/pasta.png" alt="">
+    <img src="assets/img/design/pizza.png" alt="">
+    <img src="assets/img/web/7081413.jpg" alt="">
+    <img src="https://picsum.photos/200/150?random=10" alt="">
+    <!-- duplicate -->
+    <img src="assets/img/web/7081413.jpg" alt="">
+    <img src="assets/img/web/7081413.jpg" alt="">
+    <img src="assets/img/web/7081413.jpg" alt="">
+    <img src="assets/img/web/7081413.jpg" alt="">
+    <img src="assets/img/web/7081413.jpg" alt="">
+  </div>
+</div>
+
+<h2 class="h2-topic">UI/UX Designing</h2>
+<div class="carousel-row row3">
+  <div class="carousel-track">
+    <img src="assets/img/web/7081413.jpg"alt="">
+    <img src="assets/img/web/7081413.jpg" alt="">
+    <img src="assets/img/ui ux/16679104_5781889.jpg" alt="">
+    <img src="assets/img/ui ux/5778985.jpg" alt="">
+    <img src="assets/img/ui ux/7081413.jpg" alt="">
+    <!-- duplicate -->
+    <img src="https://picsum.photos/200/150?random=11" alt="">
+    <img src="https://picsum.photos/200/150?random=12" alt="">
+    <img src="https://picsum.photos/200/150?random=13" alt="">
+    <img src="https://picsum.photos/200/150?random=14" alt="">
+    <img src="https://picsum.photos/200/150?random=15" alt="">
+  </div>
+</div>
+
+   <!-- Contact Section -->
+<section id="contact" class="contact section">
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Contact</h2>
   </div>
 
-  <h2>Graphic design</h2>
-  <div class="carousel-container">
-    <div class="carousel-slide">
-      <img src="assets/img/design/des1.jpg" alt="1">
-      <img src="assets/img/design/des3.jpg" alt="2">
-      <img src="https://via.placeholder.com/800x400/3333FF/ffffff?text=Slide+3" alt="3">
-    </div>
-    <div class="carousel-nav">
-      <button class="prev">&#10094;</button>
-      <button class="next">&#10095;</button>
-    </div>
-    <div class="carousel-dots">
-      <span class="dot active"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-    </div>
-  </div> <hr>
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="row gy-4 flex-wrap">
 
-  <h2>UI design</h2>
-  <div class="carousel-container">
-    <div class="carousel-slide">
-      <img src="assets/img/ui ux/16679104_5781889.jpg" alt="1">
-      <img src="assets/img/ui ux/5778985.jpg" alt="2">
-      <img src="https://via.placeholder.com/800x400/AA33FF/ffffff?text=Slide+3" alt="3">
-    </div>
-    <div class="carousel-nav">
-      <button class="prev">&#10094;</button>
-      <button class="next">&#10095;</button>
-    </div>
-    <div class="carousel-dots">
-      <span class="dot active"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-    </div>
-  </div>
-
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Contact</h2>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-5">
-
-            <div class="info-wrap">
-              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
-                <i class="bi bi-geo-alt flex-shrink-0"></i>
-                <div>
-                  <h3>Address</h3>
-                  <p>Matale Town,2100
-                    <br>Central , Sri Lanka.</p>
-                </div>
-              </div><!-- End Info Item -->
-
-              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
-                <i class="bi bi-telephone flex-shrink-0"></i>
-                <div>
-                  <h3>Call Us</h3>
-                  <p>+94 769909227</p>
-                </div>
-              </div><!-- End Info Item -->
-
-              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
-                <i class="bi bi-envelope flex-shrink-0"></i>
-                <div>
-                  <h3>Email Us</h3>
-                  <p>keshanebusiness@gmail.com</p>
-                </div>
-              </div><!-- End Info Item -->
-
-              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48389.78314118045!2d-74.006138!3d40.710059!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown%20Conference%20Center!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sus" frameborder="0" style="border:0; width: 100%; height: 270px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <!-- Contact Info -->
+      <div class="col-lg-5 col-md-12">
+        <div class="info-wrap">
+          <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+            <i class="bi bi-geo-alt flex-shrink-0"></i>
+            <div>
+              <h3>Address</h3>
+              <p>Matale Town, 2100<br>Central, Sri Lanka</p>
             </div>
           </div>
 
-          <div class="col-lg-7">
-            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
-              <div class="row gy-4">
+          <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+            <i class="bi bi-telephone flex-shrink-0"></i>
+            <div>
+              <h3>Call Us</h3>
+              <p>+94 769909227</p>
+            </div>
+          </div>
 
-                <div class="col-md-6">
-                  <label for="name-field" class="pb-2">Your Name</label>
-                  <input type="text" name="name" id="name-field" class="form-control" required="">
-                </div>
+          <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+            <i class="bi bi-envelope flex-shrink-0"></i>
+            <div>
+              <h3>Email Us</h3>
+              <p>keshanebusiness@gmail.com</p>
+            </div>
+          </div>
 
-                <div class="col-md-6">
-                  <label for="email-field" class="pb-2">Your Email</label>
-                  <input type="email" class="form-control" name="email" id="email-field" required="">
-                </div>
-
-                <div class="col-md-12">
-                  <label for="subject-field" class="pb-2">Subject</label>
-                  <input type="text" class="form-control" name="subject" id="subject-field" required="">
-                </div>
-
-                <div class="col-md-12">
-                  <label for="message-field" class="pb-2">Message</label>
-                  <textarea class="form-control" name="message" rows="10" id="message-field" required=""></textarea>
-                </div>
-
-                <div class="col-md-12 text-center">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                  <button type="submit">Send Message</button>
-                </div>
-
-              </div>
-            </form>
-          </div><!-- End Contact Form -->
-
+          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48389.78314118045!2d-74.006138!3d40.710059!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown%20Conference%20Center!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sus" frameborder="0" style="border:0; width: 100%; height: 270px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
-
       </div>
+
+      <!-- Contact Form -->
+      <div class="col-lg-7 col-md-12">
+        <form id="contact-form" class="php-email-form">
+          <div class="row gy-4">
+            <div class="col-md-6">
+              <label for="name-field" class="pb-2">Your Name</label>
+              <input type="text" name="name" id="name-field" class="form-control" required>
+            </div>
+
+            <div class="col-md-6">
+              <label for="email-field" class="pb-2">Your Email</label>
+              <input type="email" class="form-control" name="email" id="email-field" required>
+            </div>
+
+            <div class="col-md-12">
+              <label for="subject-field" class="pb-2">Subject</label>
+              <input type="text" class="form-control" name="subject" id="subject-field" required>
+            </div>
+
+            <div class="col-md-12">
+              <label for="message-field" class="pb-2">Message</label>
+              <textarea class="form-control" name="message" rows="6" id="message-field" required></textarea>
+            </div>
+
+            <div class="col-md-12 text-center">
+              <div class="loading" style="display:none;">Loading</div>
+              <div class="error-message" style="display:none;"></div>
+              <div class="sent-message" style="display:none;">Your message has been sent. Thank you!</div>
+              <button type="submit">Send Message</button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .contact .col-lg-5, .contact .col-lg-7 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .contact iframe {
+    height: 250px;
+  }
+
+  #contact .form-control, #contact textarea {
+    font-size: 14px;
+  }
+
+  #contact button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .contact iframe {
+    height: 200px;
+  }
+
+  #contact .form-control, #contact textarea {
+    font-size: 13px;
+  }
+
+  #contact button {
+    width: 100%;
+    padding: 12px;
+  }
+}
+</style>
 
     </section><!-- /Contact Section -->
 
